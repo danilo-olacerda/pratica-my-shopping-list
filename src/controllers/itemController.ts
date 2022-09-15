@@ -13,10 +13,10 @@ export async function getById(req: Request, res: Response) {
   const item = await itemService.findById(id);
 
   if (!item) {
-    res.sendStatus(404);
+    return res.sendStatus(404);
   }
 
-  res.send(item);
+  return res.send(item);
 }
 
 export async function create(req: Request, res: Response) {
